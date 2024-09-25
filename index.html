@@ -3,7 +3,6 @@
   <head>
     <meta charset="UTF-8">
     <title>Clinic Selin</title>
-    <link rel="icon" href="favicon.ico" type="image/x-icon">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <style>
       body, html {
@@ -97,18 +96,18 @@
           border-radius: 0;
           padding: 18px;
           justify-content: center;
+          align-items: center;
           max-width: none;
           width: 100%;
-          white-space: normal; /* Yazının sarılmasına izin veriyoruz */
-          text-align: center;  /* Metni ortalıyoruz */
+          white-space: normal;
+          text-align: center;
+          flex-direction: row; /* İçeriği yatayda hizalamak için */
         }
         .whatsapp-button img {
-          margin-right: 10px;
-          width: 24px;
-          height: 24px;
+          margin-right: 5px; /* Sağ taraftaki boşluğu azalttık */
         }
         .whatsapp-button span {
-          font-size: 16px; /* Sabit bir yazı boyutu ayarladık */
+          font-size: 16px;
         }
         /* Animasyon */
         @keyframes slideInMobile {
