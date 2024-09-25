@@ -47,7 +47,7 @@
         flex-shrink: 0;
       }
       /* Animasyon */
-      @keyframes slideIn {
+      @keyframes slideInDesktop {
         from {
           opacity: 0;
           transform: translateX(50px);
@@ -58,22 +58,41 @@
         }
       }
       .whatsapp-button {
-        animation: slideIn 0.5s forwards;
+        animation: slideInDesktop 0.5s forwards;
       }
-      /* Responsive Tasarım */
+      /* Mobil Tasarım */
       @media (max-width: 600px) {
         .whatsapp-button {
-          padding: 8px 12px;
-          font-size: 14px;
-          bottom: 10px;
-          right: 10px;
+          bottom: 0;
+          right: 0;
+          left: 0;
+          border-radius: 0;
+          padding: 15px;
+          justify-content: center;
+          max-width: none;
+          width: 100%;
         }
         .whatsapp-button img {
-          width: 20px;
-          height: 20px;
+          margin-right: 10px;
+          width: 24px;
+          height: 24px;
         }
         .whatsapp-button span {
-          display: none;
+          font-size: 16px;
+        }
+        /* Animasyon */
+        @keyframes slideInMobile {
+          from {
+            opacity: 0;
+            transform: translateY(100%);
+          }
+          to {
+            opacity: 1;
+            transform: translateY(0);
+          }
+        }
+        .whatsapp-button {
+          animation: slideInMobile 0.5s forwards;
         }
       }
     </style>
