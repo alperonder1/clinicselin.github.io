@@ -23,8 +23,8 @@
         bottom: 15px;
         right: 15px;
         display: flex;
-        align-items: center;
         justify-content: center;
+        align-items: center;
         background-color: #25D366;
         color: white;
         padding: 10px 15px;
@@ -34,7 +34,6 @@
         box-shadow: 0 4px 6px rgba(0,0,0,0.1);
         transition: all 0.3s;
         z-index: 2;
-        max-width: 90%;
         overflow: hidden;
         text-overflow: ellipsis;
         white-space: nowrap;
@@ -67,11 +66,15 @@
           transform: translate(100%, 100%) rotate(45deg);
         }
       }
-
+      .whatsapp-button .content {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
       .whatsapp-button img {
         width: 24px;
         height: 24px;
-        margin-right: 10px;
+        margin-right: 8px;
         flex-shrink: 0;
       }
       /* Masaüstü Metni */
@@ -99,17 +102,16 @@
       /* Mobil Tasarım */
       @media (max-width: 600px) {
         .whatsapp-button {
-          bottom: 0;
-          right: 0;
-          left: 0;
-          border-radius: 0;
-          padding: 18px;
-          justify-content: center;
-          align-items: center;
-          max-width: none;
-          width: 100%;
-          white-space: normal;
-          text-align: center;
+          bottom: 15px;
+          right: 50%;
+          transform: translateX(50%);
+          border-radius: 30px;
+          padding: 12px 15px;
+          width: auto;
+          max-width: 90%;
+        }
+        .whatsapp-button .content {
+          flex-direction: row;
         }
         .whatsapp-button img {
           margin-right: 5px;
@@ -122,7 +124,9 @@
           display: inline;
         }
         .whatsapp-button span {
-          font-size: 16px;
+          font-size: 15px;
+          white-space: normal;
+          text-align: center;
         }
         /* Animasyon */
         @keyframes slideInMobile {
@@ -144,9 +148,11 @@
   <body>
     <iframe src="https://clinicselin.framer.ai"></iframe>
     <a href="https://wa.me/905434152988" class="whatsapp-button" target="_blank">
-      <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp">
-      <span class="desktop-text">Hi, My name is Selin. How can I help you?</span>
-      <span class="mobile-text">Hi, It's Selin. How can I help you?</span>
+      <div class="content">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp">
+        <span class="desktop-text">Hi, My name is Selin. How can I help you?</span>
+        <span class="mobile-text">Hi, It's Selin. How can I help you?</span>
+      </div>
     </a>
   </body>
 </html>
