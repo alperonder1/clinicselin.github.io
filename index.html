@@ -24,6 +24,7 @@
         right: 15px;
         display: flex;
         align-items: center;
+        justify-content: center;
         background-color: #25D366;
         color: white;
         padding: 10px 15px;
@@ -73,6 +74,14 @@
         margin-right: 10px;
         flex-shrink: 0;
       }
+      /* Masaüstü Metni */
+      .desktop-text {
+        display: inline;
+      }
+      /* Mobil Metni */
+      .mobile-text {
+        display: none;
+      }
       /* Animasyon */
       @keyframes slideInDesktop {
         from {
@@ -101,10 +110,16 @@
           width: 100%;
           white-space: normal;
           text-align: center;
-          flex-direction: row; /* İçeriği yatayda hizalamak için */
         }
         .whatsapp-button img {
-          margin-right: 5px; /* Sağ taraftaki boşluğu azalttık */
+          margin-right: 5px;
+        }
+        /* Masaüstü Metnini Gizle, Mobil Metnini Göster */
+        .desktop-text {
+          display: none;
+        }
+        .mobile-text {
+          display: inline;
         }
         .whatsapp-button span {
           font-size: 16px;
@@ -130,7 +145,8 @@
     <iframe src="https://clinicselin.framer.ai"></iframe>
     <a href="https://wa.me/905434152988" class="whatsapp-button" target="_blank">
       <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp">
-      <span>Hi, My name is Selin. How can I help you?</span>
+      <span class="desktop-text">Hi, My name is Selin. How can I help you?</span>
+      <span class="mobile-text">Hi, It's Selin. How can I help you?</span>
     </a>
   </body>
 </html>
