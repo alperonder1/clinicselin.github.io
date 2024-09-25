@@ -103,8 +103,9 @@
       @media (max-width: 600px) {
         .whatsapp-button {
           bottom: 15px;
-          right: 50%;
-          transform: translateX(50%);
+          right: 15px;
+          left: auto;
+          transform: none;
           border-radius: 30px;
           padding: 12px 15px;
           width: auto;
@@ -132,11 +133,11 @@
         @keyframes slideInMobile {
           from {
             opacity: 0;
-            transform: translateY(100%);
+            transform: translateX(50px);
           }
           to {
             opacity: 1;
-            transform: translateY(0);
+            transform: translateX(0);
           }
         }
         .whatsapp-button {
@@ -151,8 +152,4 @@
       <div class="content">
         <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp">
         <span class="desktop-text">Hi, My name is Selin. How can I help you?</span>
-        <span class="mobile-text">Hi, It's Selin. How can I help you?</span>
-      </div>
-    </a>
-  </body>
-</html>
+        <span class="mobile-text">Hi, It's Selin. How​⬤
