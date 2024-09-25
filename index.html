@@ -19,18 +19,18 @@
       /* WhatsApp Butonu Stili */
       .whatsapp-button {
         position: fixed;
-        bottom: 25px; /* Aşağıya doğru 5px kaydırdık */
-        right: 25px;  /* Sağa doğru 5px kaydırdık */
+        bottom: 15px;
+        right: 15px;
         display: flex;
         align-items: center;
         background-color: #25D366;
         color: white;
         padding: 10px 15px;
-        border-radius: 30px; /* Yuvarlaklığı azalttık (50px'den 30px'e) */
+        border-radius: 30px;
         text-decoration: none;
         font-family: Arial, sans-serif;
         box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-        transition: transform 0.3s;
+        transition: all 0.3s;
         z-index: 2;
         max-width: 90%;
         overflow: hidden;
@@ -40,6 +40,32 @@
       .whatsapp-button:hover {
         transform: scale(1.05);
       }
+      /* Cam Yansıma Efekti */
+      .whatsapp-button::before {
+        content: '';
+        position: absolute;
+        top: -100%;
+        left: -100%;
+        width: 200%;
+        height: 200%;
+        background: linear-gradient(135deg, rgba(255,255,255,0.1) 0%, rgba(255,255,255,0.3) 50%, rgba(255,255,255,0.1) 100%);
+        transform: rotate(45deg);
+        opacity: 0;
+        transition: opacity 0.3s;
+      }
+      .whatsapp-button:hover::before {
+        opacity: 1;
+        animation: shine 0.75s forwards;
+      }
+      @keyframes shine {
+        from {
+          transform: translate(-100%, -100%) rotate(45deg);
+        }
+        to {
+          transform: translate(100%, 100%) rotate(45deg);
+        }
+      }
+
       .whatsapp-button img {
         width: 24px;
         height: 24px;
@@ -67,10 +93,12 @@
           right: 0;
           left: 0;
           border-radius: 0;
-          padding: 18px; /* Yüksekliği artırdık (15px'den 18px'e) */
+          padding: 18px;
           justify-content: center;
           max-width: none;
           width: 100%;
+          white-space: normal; /* Yazının sarılmasına izin veriyoruz */
+          text-align: center;  /* Metni ortalıyoruz */
         }
         .whatsapp-button img {
           margin-right: 10px;
@@ -78,7 +106,7 @@
           height: 24px;
         }
         .whatsapp-button span {
-          font-size: 4vw; /* Yazıyı ekran boyutuna göre responsive yaptık */
+          font-size: 16px; /* Sabit bir yazı boyutu ayarladık */
         }
         /* Animasyon */
         @keyframes slideInMobile {
